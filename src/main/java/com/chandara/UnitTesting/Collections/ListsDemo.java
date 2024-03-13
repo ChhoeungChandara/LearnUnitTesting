@@ -1,6 +1,7 @@
 package com.chandara.UnitTesting.Collections;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -38,6 +39,23 @@ public class ListsDemo {
 				          .mapToObj(i->list1.get(i)+list2.get(i))
 				          .collect(Collectors.toList());
 		return result;
+	}
+	
+	public static Integer findSecodNumberInList(List<Integer> list) {
+		return list.stream().sorted(Comparator.reverseOrder()).skip(1).findFirst().get();
+	}
+	
+	public static Integer findDigitInList(List<Integer> list) {
+		return list.size();
+	}
+	public static double findAverageInList(List<Integer> list) {
+		return list.stream().mapToDouble(Integer::doubleValue).average().orElse(0.0);
+	}
+	public static List<Integer> squareNumber(List<Integer> list) {
+		return list.parallelStream() // parallel stream is good than stream coz is can handle large record.
+		        .filter(n -> n % 2 == 0)
+		        .map(n -> n * n)
+		        .collect(Collectors.toList());
 	}
 
 }

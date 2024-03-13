@@ -62,6 +62,35 @@ public class ListDemoTesting {
 		assertEquals(5,list1.size());
 		assertEquals(expectedResult, list1);
 	}
+	@Test
+	public void findSecondNumberInListTest() {
+		List<Integer> lists = List.of(1,2,3,44,55,43,66);
+		Integer expectedNum = 55;
+		Integer findSecodNumberInList = ListsDemo.findSecodNumberInList(lists);
+		assertEquals(expectedNum,findSecodNumberInList);
+	}
+	@Test
+	public void findDigitInlistTest() {
+		List<Integer> lists = List.of(1,2,3,4,5,6,7);
+		Integer expectedDigit = 7;
+		Integer finddigit = ListsDemo.findDigitInList(lists);
+		assertEquals(expectedDigit,finddigit);
+	}
+	@Test
+	public void findAverageInListTest() {
+		List<Integer> lists = List.of(2,3,1,2);
+		double expectedDigit = 2.0;
+		double finddigit = ListsDemo.findAverageInList(lists);
+		assertEquals(expectedDigit,finddigit);
+	}
 	
+	@Test
+	public void squareTest() {
+		List<Integer> lists = List.of(1,2,3,4,5,6,7,8,9);
+		List<Integer> expected = List.of(4,16,36,64);
+		List<Integer> findSquare = ListsDemo.squareNumber(lists);
+		assertEquals(4, expected.size());
+		assertEquals(expected, findSquare);
+	}
 
 }
