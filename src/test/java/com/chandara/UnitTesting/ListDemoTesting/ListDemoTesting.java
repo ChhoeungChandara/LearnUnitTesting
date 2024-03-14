@@ -23,7 +23,10 @@ public class ListDemoTesting {
 		List<Integer> expectedNum = List.of(4,6,8);
 		List<Integer> evenNumber = ListsDemo.getEvenNumber(num);
 		assertEquals(3,evenNumber.size());
-		assertEquals(expectedNum,evenNumber);
+		assertEquals(4, expectedNum.get(0));
+		assertEquals(6, expectedNum.get(1));
+		assertEquals(8, expectedNum.get(2));
+		assertEquals(expectedNum,evenNumber); 
 	}
 	//3
 	@Test
@@ -91,6 +94,10 @@ public class ListDemoTesting {
 		List<Integer> findSquare = ListsDemo.squareNumber(lists);
 		assertEquals(4, expected.size());
 		assertEquals(expected, findSquare);
+		assertEquals(4,findSquare.get(0));
+		assertEquals(16,findSquare.get(1));
+		assertEquals(36,findSquare.get(2));
+		assertEquals(64,findSquare.get(3));
 	}
 
 }
